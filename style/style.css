@@ -5,8 +5,15 @@
     /* outline: 1px solid green !important; */
 }
 
+h1 {
+    margin-top: 50px;
+    color: rgb(181, 227, 0);
+
+}
+
 img {
     width: 100%;
+
 }
 
 
@@ -29,6 +36,8 @@ textarea {
     border: none;
     outline: none;
     background: none;
+    color: white;
+
 }
 
 body {
@@ -50,33 +59,89 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    gap: 50px;
+
+    perspective: 1000px;
+    /* Для 3д спина */
 }
 
 .cards {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transform-style: preserve-3d;
+
+    gap: 10px;
 }
 
 .card {
     width: 250px;
-    height: 400px;
+    height: 350px;
 
-    background-color: rgba(76, 76, 76, 0.827);
+    background-color: rgba(76, 76, 76, 0.586);
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
+
+    border: 1px solid gray;
+
+    /* для 3д спина */
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
 }
+
+
+
+/* для 3д спина */
+.card:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px);
+
+}
+
+.card:nth-child(2) {
+    transform: rotateY(60deg) translateZ(300px);
+
+}
+
+.card:nth-child(3) {
+    transform: rotateY(120deg) translateZ(300px);
+
+}
+
+.card:nth-child(4) {
+    transform: rotateY(180deg) translateZ(300px);
+
+}
+
+.card:nth-child(5) {
+    transform: rotateY(240deg) translateZ(300px);
+
+}
+
+.card:nth-child(6) {
+    transform: rotateY(300deg) translateZ(300px);
+
+}
+
+
+
+
+
+
+
 
 .image-window {
     width: 90%;
-    height: 320px;
-    background-color: rgba(120, 120, 120, 0.829);
+    height: 250px;
+    background-color: rgb(120, 120, 120);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,9 +152,44 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
     border-radius: 8px;
 
-    width: 100%;
+    width: 200px;
+    height: 20px;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
     height: 30px;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 8px;
+}
+
+#spin-btn {
+    margin-bottom: 50px;
+    min-width: 100px;
+    min-height: 50px;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: rgba(255, 255, 0, 0.216);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: rgba(255, 255, 0, 0.14);
+    }
+}
+
+
+.cards.spin {
+    transition: transform 8s cubic-bezier(0, 0.24, 0.06, 1.04);
 }
