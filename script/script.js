@@ -7,8 +7,8 @@ const dialog = document.querySelector('.wheel_result');
 const dialogImg = document.querySelector('.wheel_result-item img');
 const dialogName = document.querySelector('.wheel_result-item h3')
 
-const spinSound = new Audio('../sounds/spin.mp3')
-const winSound = new Audio('../sounds/win.mp3')
+const spinSound = new Audio('sounds/spin.mp3')
+const winSound = new Audio('sounds/win.mp3')
 
 
 function spinKarusel() {
